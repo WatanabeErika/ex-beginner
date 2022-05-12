@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import com.example.domain.Member;
@@ -25,10 +27,10 @@ public class MemberRepository {
 	};
 	
 	public List<Member> findByName(String name){
-		String sql="SELECT name FROM members WHERE name LIKE '%'+:name+'%'";
+		String sql="SELECT name FROM members WHERE name LIKE :name";
 		
+		SqlParameterSource param=new MapSqlParameterSource().addValue("name", '%'+name+'%');
 		
-		
-		return template.query(sql, ROW_MAPPER_MEMBER);
+		return template.query(sql, param, ROW_MAPPER_MEMBER);
 	}
 }
