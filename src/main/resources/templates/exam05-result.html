@@ -6,8 +6,8 @@
 </head>
 <body>
 <h1>検索結果</h1>
-<span th:each="memberList:${member.memberList}">
-<span th:text="${memberList}"></span>
+<span th:each="member:${memberList}">
+<span th:text="${member.name}"></span><br>
 </span>
 </body>
 </html>

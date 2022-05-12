@@ -27,7 +27,7 @@ public class MemberRepository {
 	};
 	
 	public List<Member> findByName(String name){
-		String sql="SELECT name FROM members WHERE name LIKE :name";
+		String sql="SELECT id,name,age,dep_id FROM members WHERE name LIKE :name";
 		
 		SqlParameterSource param=new MapSqlParameterSource().addValue("name", "%"+name+"%");
 		

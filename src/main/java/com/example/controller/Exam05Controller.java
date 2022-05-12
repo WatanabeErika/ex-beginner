@@ -27,10 +27,10 @@ public class Exam05Controller {
 	
 	
 	@RequestMapping("/result")
-	public String result(Model model) {
+	public String result(String name,Model model) {
 		Member member=new Member();
 		
-		List<Member> memberList=repository.findByName("ロー");
+		List<Member> memberList=repository.findByName(name);
 		
 		model.addAttribute("memberList", memberList);
 		return "exam05-result";
