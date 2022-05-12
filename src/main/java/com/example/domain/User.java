@@ -2,25 +2,33 @@ package com.example.domain;
 
 public class User {
 	private String name;
-	private Integer age;
+	private String age;
 	private String comment;
 	
-	
+	public int getIntAge() {
+		return Integer.parseInt(age);
+	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Integer getAge() {
+
+	public String getAge() {
 		return age;
 	}
-	public void setAge(Integer age) {
+
+	public void setAge(String age) {
 		this.age = age;
 	}
+
 	public String getComment() {
 		return comment;
 	}
+
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
