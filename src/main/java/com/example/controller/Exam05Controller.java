@@ -2,6 +2,8 @@ package com.example.controller;
 
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,9 +30,9 @@ public class Exam05Controller {
 	public String result(Model model) {
 		Member member=new Member();
 		
-		repository.findByName("ロー");
+		List<Member> memberList=repository.findByName("ロー");
 		
-		model.addAttribute("member", member);
+		model.addAttribute("memberList", memberList);
 		return "exam05-result";
 	
 }

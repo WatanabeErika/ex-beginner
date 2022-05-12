@@ -29,7 +29,7 @@ public class MemberRepository {
 	public List<Member> findByName(String name){
 		String sql="SELECT name FROM members WHERE name LIKE :name";
 		
-		SqlParameterSource param=new MapSqlParameterSource().addValue("name", '%'+name+'%');
+		SqlParameterSource param=new MapSqlParameterSource().addValue("name", "%"+name+"%");
 		
 		return template.query(sql, param, ROW_MAPPER_MEMBER);
 	}
