@@ -41,12 +41,9 @@ public class Exam04Controller {
 		
 		redirectAttributes.addFlashAttribute("user",user);
 		
-		return "redirect:/toresult";
+		return "exam04-result";
 	
 }
 	
-	@RequestMapping("/toresult")
-	public String toresult() {
-		return "exam04-result";
-	}
+	
 }
