@@ -28,7 +28,7 @@ public class Exam05Controller {
 	public String result(Model model) {
 		Member member=new Member();
 		
-		repository.findName("ロー");
+		repository.findByName("ロー");
 		
 		model.addAttribute("member", member);
 		return "exam05-result";

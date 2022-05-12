@@ -24,8 +24,10 @@ public class MemberRepository {
 		return member;
 	};
 	
-	public List<Member> findName(String name){
-		String sql="SELECT name FROM members WHERE name LIKE :name";
+	public List<Member> findByName(String name){
+		String sql="SELECT name FROM members WHERE name LIKE '%'+:name+'%'";
+		
+		
 		
 		return template.query(sql, ROW_MAPPER_MEMBER);
 	}
